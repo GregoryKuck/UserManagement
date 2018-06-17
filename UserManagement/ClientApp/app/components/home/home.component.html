@@ -1,0 +1,24 @@
+<h1>User Management Assessement</h1>
+<p>Seeing as Microsoft already did this for me, built with:</p>
+<ul>
+    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>
+    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+</ul>
+<p><strong>Implementation information:</strong></p>
+<ul>
+    <li>Shouldn't require any other setup in order to run, although I did encounter an issue with webpack, which needed a separate npm install</li>
+    <li>NPM requires nodejs</li>
+    <li>Uses a static in memory data source</li>
+    <li>Typically, a pre-built claims-based authentications and authorisations component will be used, so this implements a very rudimentary permissions mechanic</li>
+    <li>Very little from this design would be in a production system</li>
+    <li>Uses .Net Core dependency injection</li>
+</ul>
+<p><strong>Other notes:</strong></p>
+<p>
+    This solution took significantly longer to implement that the allotted 3 hours, although I am going to blame the HGC Mid-Season Brawl at Dream Hack Summer and the world cup football for it.
+</p>
+<p>
+    Due to only a cursory knowledge of angular.io/typescript implementation, I couldn't quite get the angular.io HTTP component hooked up to the API correctly, so as a workaround I resorted to a more monolith-style design which does not implement REST best-practices in terms of verbs, and URL structures.
+</p>

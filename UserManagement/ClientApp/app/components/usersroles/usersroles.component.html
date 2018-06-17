@@ -1,0 +1,32 @@
+<style>
+    .right-pad {
+        padding: 0 10px 0 0;
+    }
+
+    select {
+        margin: 0 30px 0 0;
+    }
+
+</style>
+
+<h1>Assign role to user</h1>
+
+<p *ngIf="!vm"><em>Loading...</em></p>
+
+<div *ngIf="vm" class="bottom-pad">
+    <span class="right-pad">Users: </span>
+    <select [(ngModel)]="vm.selectedUserId">
+        <option *ngFor="let user of vm.users" value="{{ user.id }}">{{ user.name }}</option>
+    </select>
+    <span class="right-pad">Roles:</span>
+    <select [(ngModel)]="vm.selectedRoleId">
+        <option *ngFor="let role of vm.roles" value="{{ role.id }}">{{ role.rolename }}</option>
+    </select>
+    <button (click)="assignRoleToUser()">Assign role</button>
+    <!--<p>
+        <span class=".right-pad">{{ vm.selectedUserId }}</span>
+        <span class=".right-pad">{{ vm.selectedRoleId }}</span>
+    </p>-->
+</div>
+    
+

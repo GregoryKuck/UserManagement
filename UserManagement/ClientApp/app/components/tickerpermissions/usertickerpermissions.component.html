@@ -1,0 +1,41 @@
+<style>
+    .money {
+        text-align: right;
+    }
+
+    .right-pad {
+        padding: 0 20px 0 0;
+    }
+
+    .bottom-pad {
+        padding: 0 0 20px 0;
+    }
+</style>
+
+<h1>User-based tickers</h1>
+
+<p *ngIf="!vm"><em>Loading...</em></p>
+
+<div *ngIf="vm?.users" class="bottom-pad">
+    <span class="right-pad">Choose a user:</span>
+    <select [(ngModel)]="vm.selectedUserId" (change)="getTickers()">
+        <option *ngFor="let user of vm.users" value="{{ user.id }}">{{ user.name }}</option>
+    </select>
+</div>
+
+<table class='table' *ngIf="vm?.tickers">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Ticker Code</th>
+            <th class="money">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticker of vm?.tickers">
+            <td>{{ ticker.index }}</td>
+            <td>{{ ticker.tickerCode }}</td>
+            <td class="money">{{ ticker.price }}</td>
+        </tr>
+    </tbody>
+</table>
